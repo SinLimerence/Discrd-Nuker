@@ -8,7 +8,7 @@ import os
 
 os.system('mode con: cols=140 lines=45')
 System.Clear()
-System.Title("Rev's Discord Nuker")
+System.Title("AirFlow Discord Nuker")
 
 banner = r"""
                                       /$$$$$$  /$$           /$$$$$$$$ /$$                        
