@@ -1,3 +1,9 @@
+# Powerful server nuker
+# Author: AirFlow
+# Contact: https://airflowd.netlify.app/
+
+
+
 import asyncio
 import discord
 from discord.ext import commands
