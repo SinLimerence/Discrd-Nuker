@@ -14,6 +14,7 @@ A powerful Discord server nuker/toolkit written in Python with multiple destruct
 - Mass channel creation/deletion
 - Mass role management
 - Bulk member banning/kicking
+- Up to 100k pings
 
 ## Visual
 <img width="1113" height="618" alt="Screenshot 2025-07-21 125654" src="https://github.com/user-attachments/assets/059345e2-94e5-4a35-8679-2a347fdee595" />
@@ -28,4 +29,11 @@ A powerful Discord server nuker/toolkit written in Python with multiple destruct
 
 ## Installation
 1. Install the folder.
-2. 
+2. Run install.bat.
+3. Run nuker.py
+
+## ⚖️ Legal Notice
+This software is provided "as is" without warranty of any kind. I am not responsible for any misuse of this tool. By using this software, you agree that:
+- You will only use it for legal, educational purposes
+- You have permission to test on any systems you use this tool on
+- You understand the potential legal consequences of misuse
