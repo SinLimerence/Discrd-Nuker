@@ -15,7 +15,7 @@ A powerful Discord server nuker/toolkit written in Python with multiple destruct
 - Mass role management
 - Bulk member banning/kicking  
 - Up to 1k pings
-- Server name changer 
+- Server name changer  
 - Custom spam message 
 - Custom channel names 
    
