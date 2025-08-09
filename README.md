@@ -9,7 +9,7 @@ A powerful Discord server nuker/toolkit written in Python with multiple destruct
 
 **Warning:** This tool is for educational purposes only. Misuse may violate Discord's Terms of Service and result in account termination. The developers assume no liability for any misuse.
 
-## Features
+## Features 
    
 - Mass channel creation/deletion
 - Mass role management
